@@ -31,7 +31,7 @@ A Windows application that monitors your clipboard for text changes and automati
    ```
    ollama pull mistral
    ```
-5. Then finally start the ollama server
+5. Start the ollama server
    ```
    ollama serve
    ```
