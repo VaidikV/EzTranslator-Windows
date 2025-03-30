@@ -1,4 +1,4 @@
-# Clipboard Translator
+# EzTranslate - Windows Native ML Language Translator
 
 A Windows application that monitors your clipboard for text changes and automatically translates the copied text to your selected language.
 
