@@ -131,10 +131,16 @@ namespace TextTranslatorApp
                 }
 
                 // Update prompt to include the selected language
-                var content = new StringContent(
-                    $"{{\"model\":\"deepseek-r1:1.5b\",\"prompt\":\"Translate the following English text to {_currentLanguage}. Provide ONLY the translation with no additional text or explanation: '{text}'\",\"stream\":false}}",
-                    Encoding.UTF8,
-                    "application/json");
+                var requestData = new
+                {
+                    model = "deepseek-r1:1.5b",
+                    prompt = $"Translate the following English text to {_currentLanguage}. Provide ONLY the translation with no additional text or explanation: {text}",
+                    stream = false
+                };
+
+                var jsonContent = JsonConvert.SerializeObject(requestData);
+                var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
 
                 LogMessage("Sending request to Ollama API...");
                 var response = await _httpClient.PostAsync("http://localhost:11434/api/generate", content);
@@ -147,6 +153,13 @@ namespace TextTranslatorApp
 
                     var translatedText = ParseOllamaResponse(responseContent);
                     LogMessage($"Parsed translation: '{translatedText}'");
+
+                    var errorContent = await response.Content.ReadAsStringAsync();
+                    LogMessage($"API request failed: {response.StatusCode}, Details: {errorContent}");
+
+                    this.Invoke((MethodInvoker)delegate {
+                        textBoxTranslated.Text = $"Translation API request failed: {response.StatusCode}. Details: {errorContent}";
+                    });
 
                     this.Invoke((MethodInvoker)delegate {
                         textBoxTranslated.Text = translatedText;
