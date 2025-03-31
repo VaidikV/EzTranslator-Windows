@@ -10,7 +10,7 @@ A Windows application that monitors your clipboard for text changes and automati
 - **Offline Translation**: Uses local AI models via Ollama for translation, allowing operation without internet connection
 - **Manual Translation**: Translate button to manually trigger translation of clipboard content
 - **Language Selection**: Easily switch between target languages using the dropdown menu
-- **Caching**: Stores translations to avoid re-translating the same text
+- **Caching**: Stores translations to avoid re-translating the same text.
 
 ## Requirements
 
