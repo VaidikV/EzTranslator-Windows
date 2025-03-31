@@ -65,9 +65,9 @@
             this.comboBoxLanguage.AccessibleName = "";
             this.comboBoxLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxLanguage.FormattingEnabled = true;
-            this.comboBoxLanguage.Location = new System.Drawing.Point(254, 18);
+            this.comboBoxLanguage.Location = new System.Drawing.Point(136, 18);
             this.comboBoxLanguage.Name = "comboBoxLanguage";
-            this.comboBoxLanguage.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxLanguage.Size = new System.Drawing.Size(119, 21);
             this.comboBoxLanguage.TabIndex = 3;
             this.comboBoxLanguage.SelectedIndexChanged += new System.EventHandler(this.comboBoxLanguage_SelectedIndexChanged);
             // 
@@ -77,13 +77,13 @@
             this.buttonTranslate.Name = "buttonTranslate";
             this.buttonTranslate.Size = new System.Drawing.Size(106, 28);
             this.buttonTranslate.TabIndex = 2;
-            this.buttonTranslate.Text = "Translate";
+            this.buttonTranslate.Text = "Change Model";
             this.buttonTranslate.UseVisualStyleBackColor = true;
             this.buttonTranslate.Click += new System.EventHandler(this.buttonChangeModel_Click);
             // 
             // buttonClearAll
             // 
-            this.buttonClearAll.Location = new System.Drawing.Point(127, 13);
+            this.buttonClearAll.Location = new System.Drawing.Point(722, 13);
             this.buttonClearAll.Margin = new System.Windows.Forms.Padding(6);
             this.buttonClearAll.Name = "buttonClearAll";
             this.buttonClearAll.Size = new System.Drawing.Size(106, 28);

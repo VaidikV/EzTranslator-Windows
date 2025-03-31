@@ -55,11 +55,11 @@ namespace TextTranslatorApp
 
             _httpClient = new HttpClient();
 
-            AddClipboardFormatListener(this.Handle);
             // Prompt for model name
             modelName = PromptForModelName();
 
             LogMessage("Application started");
+            AddClipboardFormatListener(this.Handle);
         }
 
         private void LogMessage(string message)
@@ -237,20 +237,15 @@ namespace TextTranslatorApp
 
         private void buttonChangeModel_Click(object sender, EventArgs e)
         {
+            RemoveClipboardFormatListener(this.Handle);
             string newModelName = PromptForModelName();
             if (newModelName != modelName)
             {
                 modelName = newModelName;
                 LogMessage($"Model changed to: {modelName}");
-                // Optionally retranslate current text with new model
-                if (!string.IsNullOrEmpty(textBoxOriginal.Text))
-                {
-                    TranslateTextAsync(textBoxOriginal.Text);
-                }
             }
+            AddClipboardFormatListener(this.Handle);
         }
-
-
 
 
         private void buttonClearAll_Click(object sender, EventArgs e)
