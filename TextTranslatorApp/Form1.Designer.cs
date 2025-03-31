@@ -54,10 +54,10 @@
             this.panel1.Controls.Add(this.buttonTranslate);
             this.panel1.Controls.Add(this.buttonClearAll);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 366);
+            this.panel1.Location = new System.Drawing.Point(0, 477);
             this.panel1.Margin = new System.Windows.Forms.Padding(6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(784, 56);
+            this.panel1.Size = new System.Drawing.Size(843, 56);
             this.panel1.TabIndex = 1;
             // 
             // comboBoxLanguage
@@ -79,7 +79,7 @@
             this.buttonTranslate.TabIndex = 2;
             this.buttonTranslate.Text = "Translate";
             this.buttonTranslate.UseVisualStyleBackColor = true;
-            this.buttonTranslate.Click += new System.EventHandler(this.buttonTranslate_Click);
+            this.buttonTranslate.Click += new System.EventHandler(this.buttonChangeModel_Click);
             // 
             // buttonClearAll
             // 
@@ -105,20 +105,20 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(784, 366);
-            this.splitContainer1.SplitterDistance = 250;
+            this.splitContainer1.Size = new System.Drawing.Size(843, 477);
+            this.splitContainer1.SplitterDistance = 268;
             this.splitContainer1.TabIndex = 2;
             // 
             // listBoxCapturedText
             // 
-            this.listBoxCapturedText.Dock = System.Windows.Forms.DockStyle.Left;
+            this.listBoxCapturedText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listBoxCapturedText.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxCapturedText.FormattingEnabled = true;
             this.listBoxCapturedText.ItemHeight = 18;
             this.listBoxCapturedText.Location = new System.Drawing.Point(0, 0);
             this.listBoxCapturedText.Name = "listBoxCapturedText";
             this.listBoxCapturedText.ScrollAlwaysVisible = true;
-            this.listBoxCapturedText.Size = new System.Drawing.Size(248, 366);
+            this.listBoxCapturedText.Size = new System.Drawing.Size(268, 477);
             this.listBoxCapturedText.TabIndex = 0;
             this.listBoxCapturedText.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listBoxCapturedText_MouseClick);
             // 
@@ -136,8 +136,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.textBoxTranslated);
-            this.splitContainer2.Size = new System.Drawing.Size(530, 366);
-            this.splitContainer2.SplitterDistance = 166;
+            this.splitContainer2.Size = new System.Drawing.Size(571, 477);
+            this.splitContainer2.SplitterDistance = 215;
             this.splitContainer2.TabIndex = 0;
             // 
             // textBoxOriginal
@@ -147,7 +147,7 @@
             this.textBoxOriginal.Location = new System.Drawing.Point(0, 0);
             this.textBoxOriginal.Multiline = true;
             this.textBoxOriginal.Name = "textBoxOriginal";
-            this.textBoxOriginal.Size = new System.Drawing.Size(530, 166);
+            this.textBoxOriginal.Size = new System.Drawing.Size(571, 215);
             this.textBoxOriginal.TabIndex = 0;
             // 
             // textBoxTranslated
@@ -157,14 +157,14 @@
             this.textBoxTranslated.Location = new System.Drawing.Point(0, 0);
             this.textBoxTranslated.Multiline = true;
             this.textBoxTranslated.Name = "textBoxTranslated";
-            this.textBoxTranslated.Size = new System.Drawing.Size(530, 196);
+            this.textBoxTranslated.Size = new System.Drawing.Size(571, 258);
             this.textBoxTranslated.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(784, 422);
+            this.ClientSize = new System.Drawing.Size(843, 533);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(6);

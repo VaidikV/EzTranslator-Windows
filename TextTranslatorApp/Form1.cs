@@ -7,6 +7,8 @@ using Newtonsoft.Json;
 using System.Text;
 using System.Diagnostics;
 using System.IO;
+using System.Configuration;
+using System.Drawing;
 
 namespace TextTranslatorApp
 {
@@ -27,6 +29,7 @@ namespace TextTranslatorApp
         private HttpClient _httpClient;
         private string _logPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "translator_log.txt");
         private string _currentLanguage = "Spanish";
+        string modelName = "";
         private string _currentLanguageCode = "es";
 
         public Form1()
@@ -35,23 +38,27 @@ namespace TextTranslatorApp
 
             // Initialize language dropdown
             comboBoxLanguage.Items.AddRange(new string[] {
-    "English (en)",
-    "Spanish (es)",
-    "French (fr)",
-    "German (de)",
-    "Chinese (zh)",
-    "Portuguese (pt)",
-    "Dutch (nl)",
-    "Russian (ru)",
-    "Korean (ko)",
-    "Italian (it)"
-});
+                "English (en)",
+                "Spanish (es)",
+                "French (fr)",
+                "German (de)",
+                "Chinese (zh)",
+                "Portuguese (pt)",
+                "Dutch (nl)",
+                "Russian (ru)",
+                "Korean (ko)",
+                "Italian (it)"
+            });
             comboBoxLanguage.SelectedIndex = 1; // Default to Spanish
             _currentLanguage = "Spanish";
             _currentLanguageCode = "es";
 
             _httpClient = new HttpClient();
+
             AddClipboardFormatListener(this.Handle);
+            // Prompt for model name
+            modelName = PromptForModelName();
+
             LogMessage("Application started");
         }
 
@@ -133,7 +140,7 @@ namespace TextTranslatorApp
                 // Update prompt to include the selected language
                 var requestData = new
                 {
-                    model = "deepseek-r1:1.5b",
+                    model = modelName,
                     prompt = $"Translate the following English text to {_currentLanguage}. Provide ONLY the translation with no additional text or explanation: {text}",
                     stream = false
                 };
@@ -228,31 +235,21 @@ namespace TextTranslatorApp
         }
 
 
-        private void buttonTranslate_Click(object sender, EventArgs e)
+        private void buttonChangeModel_Click(object sender, EventArgs e)
         {
-            LogMessage("Translate button clicked");
-            string clipboardText = Clipboard.GetText();
-            if (!string.IsNullOrEmpty(clipboardText))
+            string newModelName = PromptForModelName();
+            if (newModelName != modelName)
             {
-                LogMessage($"Got clipboard text: '{clipboardText}'");
-                textBoxOriginal.Text = clipboardText;
-
-                // Add to list if not already present
-                if (!listBoxCapturedText.Items.Contains(clipboardText))
+                modelName = newModelName;
+                LogMessage($"Model changed to: {modelName}");
+                // Optionally retranslate current text with new model
+                if (!string.IsNullOrEmpty(textBoxOriginal.Text))
                 {
-                    listBoxCapturedText.Items.Add(clipboardText);
-                    LogMessage($"Added text to list: '{clipboardText}'");
+                    TranslateTextAsync(textBoxOriginal.Text);
                 }
-
-                // Translate using current language settings
-                TranslateTextAsync(clipboardText);
-            }
-            else
-            {
-                LogMessage("Clipboard is empty");
-                MessageBox.Show("The clipboard is empty. Please copy some text first.", "No Text to Translate", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
 
 
 
@@ -347,7 +344,26 @@ namespace TextTranslatorApp
             }
         }
 
+        private string PromptForModelName()
+        {
+            using (var form = new Form())
+            {
+                form.Text = "Enter Model Name";
+                form.Size = new Size(400, 150); // Set width to 400 and height to 150
+                form.FormBorderStyle = FormBorderStyle.FixedDialog; // Prevent resizing
+                form.StartPosition = FormStartPosition.CenterScreen; // Center on screen
 
+                var textBox = new TextBox() { Left = 20, Top = 20, Width = 340 };
+                var button = new Button() { Text = "OK", Left = 150, Top = 60, Width = 100 };
+
+                button.Click += (sender, e) => { form.DialogResult = DialogResult.OK; };
+                form.Controls.Add(textBox);
+                form.Controls.Add(button);
+                form.AcceptButton = button;
+
+                return form.ShowDialog() == DialogResult.OK ? textBox.Text : "";
+            }
+        }
 
 
         private void textBoxTranslated_TextChanged(object sender, EventArgs e)
