@@ -2,6 +2,9 @@
 
 A Windows application that monitors your clipboard for text changes and automatically translates the copied text to your selected language.
 
+<img src="https://github.com/user-attachments/assets/49d5d4f8-99e1-4ccd-90c3-d4b72dd93c70" alt="drawing" width="400"/>
+
+
 ## Features
 
 - **Automatic Clipboard Monitoring**: Detects when text is copied to the clipboard and translates it immediately
