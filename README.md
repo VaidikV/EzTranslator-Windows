@@ -9,7 +9,7 @@ Just "copy" any text from anywhere in the Windows Operating System.
 <br><br>
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/c3baa3db-c760-4c47-8fbd-1b8fb9ecdf34" />
 
-The "EzTranslate" app will translate the selected text in the background and keep it saved for you check it out later.
+The app will translate the selected text in the background and keep it saved for you check it out later.
 
 ## Features
 
@@ -73,27 +73,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - Ollama for providing the local AI model infrastructure
 - DeepSeek and Mistral for the translation models
-
-
-#### Links that helped:
-
-[1] https://github.com/ha1fdan/clipboard-translator
-[2] https://github.com/sudoker0/Windows-Forms-App-2.0-Unofficial
-[3] https://community.rws.com/product-groups/trados-portfolio/rws-appstore/w/wiki/5426/trados-t-window-for-clipboard
-[4] https://www.ccjk.com/google-translate-mobile-features/
-[5] https://github.com/dotnet/samples/blob/main/windowsforms/README.md
-[6] https://appstore.rws.com/Plugin/51
-[7] https://docs.uipath.com/clipboard-ai/standalone/latest/user-guide/introduction
-[8] https://www.reddit.com/r/tasker/comments/1byyj2c/translation_of_copied_text_using_google/
-[9] https://dev.to/xastrix/lswap-clipboard-translator-4l5i
-[10] https://github.com/dotnet/samples/blob/main/README.md
-[11] https://play.google.com/store/apps/details?id=quality.multi.copy.managers.apps.labs
-[12] https://www.youtube.com/watch?v=XSSD9U67nEE
-[13] https://github.com/dotnet/winforms/blob/main/README.md
-[14] https://sourceforge.net/projects/copytranslator.mirror/
-[15] https://github.com/JalenBrown11/Dashboard
-[16] https://bohemicus-software.cz/2020/11/03/how-to-translate-and-write-faster-a-clipboard-manager/
-[17] https://github.com/topics/windows-forms
-[18] https://support.google.com/translate/answer/6350658?co=GENIE.Platform%3DAndroid
-[19] https://www.reddit.com/r/software/comments/pfm05i/windows_application_that_translates_text_copied/
-[20] https://github.com/NikolaGrujic91/WinForms-Examples
