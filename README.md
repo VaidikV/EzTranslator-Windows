@@ -1,9 +1,15 @@
-# EzTranslate - Windows Native ML Language Translator
+#  <img width="70" alt="image" src="https://github.com/user-attachments/assets/73f21ff3-c1b8-4db6-be14-929219e0518d" width="100"/> EzTranslate - Windows Native ML Language Translator
 
 A Windows application that monitors your clipboard for text changes and automatically translates the copied text to your selected language.
 
-<img src="https://github.com/user-attachments/assets/49d5d4f8-99e1-4ccd-90c3-d4b72dd93c70" alt="drawing" width="400"/>
+## Screenshots
+<img width="450" alt="image" src="https://github.com/user-attachments/assets/5abf948c-7661-471d-8c17-86643ece2a29" width="400" />
 
+Just "copy" any text from anywhere in the Windows Operating System.
+<br><br>
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/c3baa3db-c760-4c47-8fbd-1b8fb9ecdf34" />
+
+The "EzTranslate" app will translate the selected text in the background and keep it saved for you check it out later.
 
 ## Features
 
@@ -56,6 +62,8 @@ A Windows application that monitors your clipboard for text changes and automati
 - Uses Windows Forms for the user interface
 - Integrates with Ollama API for local AI-powered translations
 - Implements Windows clipboard monitoring via native API calls
+
+<img src="https://github.com/user-attachments/assets/49d5d4f8-99e1-4ccd-90c3-d4b72dd93c70" alt="drawing" width="400"/>
 
 ## License
 
