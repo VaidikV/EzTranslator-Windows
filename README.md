@@ -34,11 +34,11 @@ The "EzTranslate" app will translate the selected text in the background and kee
 3. Ensure Ollama is installed and running
 4. Pull a compatible translation model:
    ```
-   ollama pull deepseek-r1:1.5b
+   ollama pull zongwei/gemma3-translator:1b
    ```
    or
    ```
-   ollama pull mistral
+   ollama pull deepseek-r1:1.5b
    ```
 5. Start the ollama server
    ```
